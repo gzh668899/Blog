@@ -1,0 +1,36 @@
+/* EVA 主题渐变动画背景 */
+@media (min-width: 768px) {
+  body {
+    background: linear-gradient(-45deg,
+      #1a0b2e,  /* 深紫 - Nerv 基调 */
+      #4a154b,  /* 紫色 - 初号机 */
+      #6b1c3a,  /* 紫红 */
+      #d14a28,  /* 橙红 - 零号机 */
+      #1a0b2e   /* 深紫循环 */
+    );
+    background-size: 400% 400%;
+    animation: evaGradient 15s ease infinite;
+  }
+
+  @keyframes evaGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+}
+
+/* 添加细微的网格线效果 - EVA 风格 */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+  z-index: -1;
+}
